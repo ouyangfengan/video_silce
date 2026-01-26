@@ -1,0 +1,27 @@
+"""
+配置文件
+"""
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# API配置 - DeepSeek
+
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "***********************")
+DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
+LLM_MODEL = "deepseek-chat"
+
+# 路径配置
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_VIDEO_DIR = os.path.join(BASE_DIR, "data", "input_videos")
+OUTPUT_VIDEO_DIR = os.path.join(BASE_DIR, "data", "output_videos")
+PROCESSED_AUDIO_DIR = os.path.join(BASE_DIR, "data", "processed_audio")
+SLICE_VIDEO_DIR = os.path.join(BASE_DIR, "data", "slice_video")
+ANALYSIS_RESULTS_DIR = os.path.join(BASE_DIR, "data", "analysis_results")
+TRANSCRIPTS_DIR = os.path.join(BASE_DIR, "data", "transcripts")
+
+# 确保目录存在
+for directory in [INPUT_VIDEO_DIR, OUTPUT_VIDEO_DIR, PROCESSED_AUDIO_DIR, SLICE_VIDEO_DIR, ANALYSIS_RESULTS_DIR, TRANSCRIPTS_DIR]:
+    os.makedirs(directory, exist_ok=True)
