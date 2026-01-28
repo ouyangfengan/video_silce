@@ -1,0 +1,9 @@
+moviepy
+requests
+python-dotenv
+ffmpeg-python
+openai-whisper
+fastapi
+uvicorn
+pydantic
+pydantic-settings
